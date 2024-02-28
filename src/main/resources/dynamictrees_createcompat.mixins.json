@@ -1,0 +1,16 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "moe.wolfgirl.dynamictrees_createcompat.mixins",
+    "compatibilityLevel": "JAVA_8",
+    "refmap": "DynamicTreesCreateCompat.refmap.json",
+    "mixins": [
+        "MechanicalSawMixin",
+        "TreeCutterMixin"
+    ],
+    "client": [
+    ],
+    "injectors": {
+        "defaultRequire": 1
+  }
+}
