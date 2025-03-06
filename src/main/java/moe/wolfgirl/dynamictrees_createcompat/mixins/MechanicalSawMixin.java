@@ -6,13 +6,11 @@ import com.simibubi.create.content.kinetics.base.BlockBreakingKineticBlockEntity
 import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock;
 import com.simibubi.create.content.kinetics.deployer.DeployerFakePlayer;
 import com.simibubi.create.content.kinetics.saw.SawBlockEntity;
-import com.simibubi.create.foundation.utility.TreeCutter;
+import com.simibubi.create.content.kinetics.saw.TreeCutter;
 import moe.wolfgirl.dynamictrees_createcompat.Config;
 import moe.wolfgirl.dynamictrees_createcompat.DynamicTreesCreateCompat;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
