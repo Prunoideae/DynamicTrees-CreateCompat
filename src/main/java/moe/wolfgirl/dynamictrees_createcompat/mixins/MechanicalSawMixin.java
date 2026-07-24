@@ -1,7 +1,7 @@
 package moe.wolfgirl.dynamictrees_createcompat.mixins;
 
-import com.ferreusveritas.dynamictrees.block.branch.BranchBlock;
-import com.ferreusveritas.dynamictrees.block.branch.TrunkShellBlock;
+import com.dtteam.dynamictrees.block.branch.BranchBlock;
+import com.dtteam.dynamictrees.block.branch.TrunkShellBlock;
 import com.simibubi.create.content.kinetics.base.BlockBreakingKineticBlockEntity;
 import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock;
 import com.simibubi.create.content.kinetics.deployer.DeployerFakePlayer;
@@ -46,10 +46,11 @@ public abstract class MechanicalSawMixin extends BlockBreakingKineticBlockEntity
 				};
 				DynamicTreesCreateCompat.LOGGER.info(String.valueOf(rotation));
 				fakePlayer.setYHeadRot(rotation);
+				var fluidState = level.getFluidState(breakingPos);
 				if (stateToBreak.getBlock() instanceof BranchBlock branchBlock) {
-					branchBlock.removedByEntity(stateToBreak, serverLevel, breakingPos, fakePlayer);
+					branchBlock.onDestroyedByPlayer(stateToBreak, level, breakingPos, fakePlayer, true, fluidState);
 				} else if (stateToBreak.getBlock() instanceof TrunkShellBlock trunkShellBlock) {
-					trunkShellBlock.onDestroyedByPlayer(stateToBreak, level, breakingPos, fakePlayer, true, level.getFluidState(breakingPos));
+					trunkShellBlock.onDestroyedByPlayer(stateToBreak, level, breakingPos, fakePlayer, true, fluidState);
 				}
 				ci.cancel();
 			}

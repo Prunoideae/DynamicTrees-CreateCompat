@@ -1,24 +1,25 @@
 package moe.wolfgirl.dynamictrees_createcompat;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.fml.event.config.ModConfigEvent;
 
-@Mod.EventBusSubscriber(modid = DynamicTreesCreateCompat.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = DynamicTreesCreateCompat.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class Config {
-	private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+	private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
 
-	private static final ForgeConfigSpec.DoubleValue DROP_MULTIPLIER = BUILDER
+	private static final ModConfigSpec.DoubleValue DROP_MULTIPLIER = BUILDER
 			.comment("Drop chance for the mechanical saw")
 			.defineInRange("dropMultiplier", 1d, 0d, 1d);
 
-	private static final ForgeConfigSpec.BooleanValue SIMULATE_AXE = BUILDER
+	private static final ModConfigSpec.BooleanValue SIMULATE_AXE = BUILDER
 			.comment("Let the tree fall like got chopped by player")
 			.define("simulateFall", false);
 
-	static final ForgeConfigSpec SPEC = BUILDER.build();
+	static final ModConfigSpec SPEC = BUILDER.build();
 
 	public static double dropMultiplier;
 	public static boolean simulateFall;

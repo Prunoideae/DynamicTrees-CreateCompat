@@ -2,7 +2,7 @@ package moe.wolfgirl.dynamictrees_createcompat.mixins;
 
 import com.simibubi.create.compat.Mods;
 import com.simibubi.create.foundation.utility.AbstractBlockBreakQueue;
-import com.simibubi.create.foundation.utility.TreeCutter;
+import com.simibubi.create.content.kinetics.saw.TreeCutter;
 import moe.wolfgirl.dynamictrees_createcompat.DynamicTree;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Block;
