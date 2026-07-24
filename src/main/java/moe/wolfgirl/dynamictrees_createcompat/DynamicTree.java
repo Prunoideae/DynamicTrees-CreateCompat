@@ -1,9 +1,9 @@
 package moe.wolfgirl.dynamictrees_createcompat;
 
-import com.ferreusveritas.dynamictrees.api.TreeHelper;
-import com.ferreusveritas.dynamictrees.block.branch.BranchBlock;
-import com.ferreusveritas.dynamictrees.block.branch.TrunkShellBlock;
-import com.ferreusveritas.dynamictrees.util.BranchDestructionData;
+import com.dtteam.dynamictrees.tree.TreeHelper;
+import com.dtteam.dynamictrees.block.branch.BranchBlock;
+import com.dtteam.dynamictrees.block.branch.TrunkShellBlock;
+import com.dtteam.dynamictrees.api.network.BranchDestructionData;
 import com.simibubi.create.foundation.utility.AbstractBlockBreakQueue;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -59,8 +59,8 @@ public class DynamicTree extends AbstractBlockBreakQueue {
 		if (block instanceof TrunkShellBlock) {
 			TrunkShellBlock.ShellMuse muse = ((TrunkShellBlock) block).getMuse(world, startCutPos);
 			if (muse != null) {
-				startCutPos = muse.pos; //the cut pos is moved to the center of the trunk
-				return TreeHelper.getBranch(muse.state);
+				startCutPos = muse.pos(); //the cut pos is moved to the center of the trunk
+				return TreeHelper.getBranch(muse.state());
 			}
 		}
 		return null;
